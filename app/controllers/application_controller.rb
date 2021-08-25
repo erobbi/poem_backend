@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -25,6 +27,12 @@ class ApplicationController < Sinatra::Base
   get "/authors" do
     authors = Author.all
     authors.to_json
+
+  end
+
+  post "/newpoem" do
+    poem = Poem.create(author_id: Author.last.id, title: params[:title],content: params[:content])
+    poem.to_json
   end
   
 end

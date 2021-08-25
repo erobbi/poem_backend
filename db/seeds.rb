@@ -6,6 +6,7 @@ puts "🌱 Seeding authors..."
 plath = Author.create(name: 'Sylvia Plath')
 frost = Author.create(name: 'Robert Frost')
 collins = Author.create(name: 'Billy Collins')
+anonymous = Author.create(name: 'anonymous')
 
 
 
