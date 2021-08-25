@@ -8,7 +8,7 @@ task :server do
     return
   end
 
-  ENV["PORT"] ||= "9293"
+  ENV["PORT"] ||= "9292"
   rackup = "rackup -p #{ENV['PORT']}"
 
   exec "bundle exec rerun -b '#{rackup}'"
