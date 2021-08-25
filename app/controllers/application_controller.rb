@@ -10,5 +10,12 @@ class ApplicationController < Sinatra::Base
     poems = Poem.all
     poems.to_json
   end
+
+  get "/authors" do
+    authors = Author.all
+    authors.to_json
+  end
+
+   
   
 end
