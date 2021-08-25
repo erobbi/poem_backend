@@ -11,11 +11,22 @@ class ApplicationController < Sinatra::Base
     poems.to_json
   end
 
+  get "/poems/:id" do
+    poem = Poem.find(params[:id])
+    poem.content = poem.content.split(/\\n/)
+    poem.to_json
+  end
+
+  get "/array" do
+    array = Array(0..9)
+    array.to_json
+  end
+
   get "/authors" do
     authors = Author.all
     authors.to_json
   end
-
-   
   
 end
+
+## listenrs..there is a form listener, ASCII characters....enter has a [char13]...replace [char13] with '\\n'
