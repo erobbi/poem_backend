@@ -3,11 +3,17 @@ Author.destroy_all
 Poem.destroy_all
 
 puts "🌱 Seeding authors..."
-plath = Author.create(name: 'Sylvia Plath')
-frost = Author.create(name: 'Robert Frost')
-collins = Author.create(name: 'Billy Collins')
-masefield = Author.create(name: 'John Masefield')
-anonymous = Author.create(name: 'anonymous')
+plath = Author.create(name: 'Sylvia Plath', is_user: false)
+frost = Author.create(name: 'Robert Frost', is_user: false)
+collins = Author.create(name: 'Billy Collins', is_user: false)
+masefield = Author.create(name: 'John Masefield', is_user: false)
+
+eli = Author.create(name: 'Eli Robbins', is_user: true)
+adam = Author.create(name: 'Adam La Rosa', is_user: true)
+william = Author.create(name: 'William Badger', is_user: true)
+daniel = Author.create(name: 'Daniel Ezekiel', is_user: true)
+anonymous = Author.create(name: 'anonymous', is_user: true)
+
 
 
 
@@ -31,6 +37,20 @@ Poem.create(poem_id: 4, author_id: masefield.id, likes: 0,
 Poem.create(poem_id: 5, author_id: collins.id, likes: 0,
         title: 'Introduction to Poetry',
         content:"I ask them to take a poem\nand hold it up to the light\nlike a color slide\n\nor press an ear against its hive.\n\nI say drop a mouse into a poem\nand watch him probe his way out,\nor walk inside the poem\'s room\nand feel the walls for a light switch.\n\nI want them to waterski\nacross the surface of a poem\nwaving at the author\'s name on the shore.\n\nBut all they want to do\nis tie the poem to a chair with rope\nand torture a confession out of it.\n\nThey begin beating it with a hose\nto find out what it really means.")
+
+Poem.create(poem_id:100, author_id: eli.id, likes:0,
+            title: "Sometimes I code",
+            content: "Sometimes I code.\nSometimes I don't.\nThe world is on fire.\nso let's all code.")
+
+
+Poem.create(poem_id:101, author_id: eli.id, likes:0,
+            title: "World on Fire",
+            content: "The World is on fire\nbut that is ok\nbecause i have A/C")
+
+
+Poem.create(poem_id:102, author_id: william.id, likes:0,
+            title: "Ruby on Rails",
+            content: "Roses are red\nViolets are Pale\nI can't for ruby\nTo be on a rail")
     
 
 puts "✅ Done seeding!"

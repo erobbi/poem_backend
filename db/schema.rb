@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_203015) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_user"
   end
 
   create_table "poems", force: :cascade do |t|
