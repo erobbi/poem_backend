@@ -19,6 +19,13 @@ class ApplicationController < Sinatra::Base
     poem.to_json
   end
 
+  get "/poems/:id/like/" do
+    poem = Poem.find(params[:id])
+    likes = poem.likes + 1
+    poem.update(likes: likes)
+    poem.to_json
+  end
+
   get "/array" do
     array = Array(0..9)
     array.to_json

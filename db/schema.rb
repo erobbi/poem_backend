@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_203015) do
   create_table "poems", force: :cascade do |t|
     t.integer "author_id"
     t.integer "poem_id"
+    t.integer "likes"
     t.string "title"
     t.text "content"
     t.index ["author_id"], name: "index_poems_on_author_id"
