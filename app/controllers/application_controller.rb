@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
 
   get "/poems/:id" do
     poem = Poem.find(params[:id])
-    poem.content = poem.content.split(/\\n/)
+    poem.content = poem.content.split(/\n/)
     poem.to_json
   end
 
@@ -37,4 +37,3 @@ class ApplicationController < Sinatra::Base
   
 end
 
-## listenrs..there is a form listener, ASCII characters....enter has a [char13]...replace [char13] with '\\n'
