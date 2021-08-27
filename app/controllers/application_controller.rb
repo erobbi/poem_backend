@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/newpoem" do
-    poem = Poem.create(author_id: Author.last.id, title: params[:title],content: params[:content])
+    poem = Poem.create(likes: 0, author_id: params[:author_id], title: params[:title],content: params[:content])
     poem.to_json
   end
   
